@@ -19696,6 +19696,6 @@ li a.active {
 
 img.alignright { float: right; margin: 0 0 1em 1em; }
 
-.do-nothing {display:none;}
+.do-nothing {display:none;visibility: hidden;}
 
 
