@@ -113,7 +113,7 @@
                             <div class="cws-navbar-brand">
                                     <?php if ($site_logo != '') {?>
                                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-                                            <img class="img-responsive" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
+                                            <img class="img-responsive logo" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
                                         </a>
                                     <?php } else { ?>
                                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
