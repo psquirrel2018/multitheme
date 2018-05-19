@@ -108,12 +108,12 @@
                     <hr>
                     <!-- RD Navbar Panel-->
                     <div class="row">
-                        <div class="col-sm-4 cws-navbar-panel">
+                        <div class="col-md-4 cws-navbar-panel">
                             <!--Navbar Brand-->
-                            <div class="cws-navbar-brand"><a href="http://rmvg.dev">
+                            <div class="cws-navbar-brand">
                                     <?php if ($site_logo != '') {?>
                                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-                                            <img class="img-responsive" src='<?= $site_logo; ?>' alt='Rocky Mountain Vision Group Logo'/>
+                                            <img class="img-responsive" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
                                         </a>
                                     <?php } else { ?>
                                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
@@ -122,7 +122,7 @@
                                     <?php }; ?>
                             </div>
                         </div>
-                        <div class="col-sm-8 cws-navbar-menu-wrap">
+                        <div class="col-md-8 cws-navbar-menu-wrap">
                             <div class="cws-navbar-nav-wrap">
                                 <div class="cws-navbar-mobile-scroll">
                                     <!--Navbar Brand Mobile-->
@@ -144,6 +144,7 @@
         
                 <ul class="slides-container">
                     <!-- Slide container -->
+                    <?php if($slide_one_img !='') { ?>
                     <li>
                         <img src="<?= $slide_one_img; ?>">
                         <div class="tint">
@@ -156,6 +157,10 @@
                             </div>
                         </div>
                     </li>
+                    <?php } else { ?>
+                    <li><h4 style="padding: 60px;">You must enter at least on slide in the Theme Options panel of the admin and it has to be the first slife</h4></li>
+                    <?php } ?>
+                    <?php if($slide_two_img !='') { ?>
                     <li>
                         <img src="<?= $slide_two_img; ?>">
                         <div class="tint">
@@ -168,6 +173,8 @@
                             </div>
                         </div>
                     </li>
+                    <?php } ?>
+                    <?php if($slide_three_img !='') { ?>
                     <li>
                         <img src="<?= $slide_three_img; ?>">
                         <div class="tint">
@@ -180,6 +187,7 @@
                             </div>
                         </div>
                     </li>
+                    <?php } ?>
 
                 </ul>
           

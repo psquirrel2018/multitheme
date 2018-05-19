@@ -19698,4 +19698,8 @@ img.alignright { float: right; margin: 0 0 1em 1em; }
 
 .do-nothing {display:none;visibility: hidden;}
 
+img.img-responsive.logo {
+    margin: 15px auto;
+}
+
 
