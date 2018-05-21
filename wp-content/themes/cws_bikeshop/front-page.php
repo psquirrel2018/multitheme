@@ -4,7 +4,7 @@ Template Name: Front Page
  **/
 /**
  * Created by PhpStorm.
- * User: circdominic
+ * User: Scott Taylor
  * Date: 8/14/17
  * Time: 3:28 PM
  */
