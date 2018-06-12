@@ -21,11 +21,11 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
     require_once dirname( __FILE__ ) . '/CMB2/init.php';
 }
 
-add_action( 'cmb2_admin_init', 'rmvg_confluence_register_secondary_metabox' );
+add_action( 'cmb2_admin_init', 'multi_confluence_register_secondary_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
-function rmvg_confluence_register_secondary_metabox()
+function multi_confluence_register_secondary_metabox()
 {
 
     // Start with an underscore to hide fields from custom fields list

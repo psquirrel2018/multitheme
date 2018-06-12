@@ -128,7 +128,7 @@
                     <!--Swiper-->
                     <div data-loop="true" data-height="500px" data-dragable="false" data-min-height="480px" class="swiper-container swiper-slider">
                         <div id="page-loader" class="swiper-wrapper text-center">
-                            <?php $hpSlider = get_post_meta( $slider_id, '_rmvg_slides_group_', true );
+                            <?php $hpSlider = get_post_meta( $slider_id, '_multi_slides_group_', true );
                             foreach ( (array) $hpSlider as $slide ) {
                                 $img = $title = $secondaryTitle = $tertiaryTitle = $cta = $ctaUrl = $cta2 = $ctaUrl2 = '';
                                 if ( isset( $slide['message'] ) )
