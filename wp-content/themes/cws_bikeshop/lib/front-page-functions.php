@@ -28,7 +28,7 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
  *
  * @return bool             True if metabox should show
  */
-function rmvg_confluence_show_if_front_page( $cmb ) {
+function multi_confluence_show_if_front_page( $cmb ) {
 	// Don't show this metabox if it's not the front page template
 	if ( $cmb->object_id !== get_option( 'page_on_front' ) ) {
 		return false;
@@ -65,11 +65,11 @@ function yourprefix_before_row_if_2( $field_args, $field ) {
 	}
 }
 
-add_action( 'cmb2_admin_init', 'rmvg_confluence_register_custom_metabox' );
+add_action( 'cmb2_admin_init', 'multi_confluence_register_custom_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
-function rmvg_confluence_register_custom_metabox()
+function multi_confluence_register_custom_metabox()
 {
 
     // Start with an underscore to hide fields from custom fields list
@@ -83,7 +83,7 @@ function rmvg_confluence_register_custom_metabox()
         'title' => __('Homepage Custom Fields', 'cmb2'),
         'object_types' => array('page',), // Post type
         'show_on'      => array( 'key' => 'page-template', 'value' => 'front-page.php' ),
-        //'show_on_cb' => '_rmvg_confluence_frontpage_show_if_front_page', // function should return a bool value
+        //'show_on_cb' => '_multi_confluence_frontpage_show_if_front_page', // function should return a bool value
         // 'context'    => 'normal',
         // 'priority'   => 'high',
         // 'show_names' => true, // Show field names on the left

@@ -114,7 +114,6 @@ get_header();
             </div>
         </section>
 
-
         <!-- Featured News-->
         <section id="blog" class="bg-polar" style="padding:60px 0;">
             <div class="container">
@@ -156,9 +155,6 @@ get_header();
                 </div
             </div>
         </section>
-
     </main>
-
-
 
 <?php get_footer(); ?>
