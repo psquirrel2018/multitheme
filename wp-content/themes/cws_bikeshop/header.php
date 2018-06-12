@@ -141,10 +141,9 @@
     </div>
 
     <div id="slider" style="max-height:600px !important;">
-        
+        <?php if($slide_one_img !='') { ?>
                 <ul class="slides-container">
                     <!-- Slide container -->
-                    <?php if($slide_one_img !='') { ?>
                     <li>
                         <img src="<?= $slide_one_img; ?>">
                         <div class="tint">
@@ -157,9 +156,6 @@
                             </div>
                         </div>
                     </li>
-                    <?php } else { ?>
-                    <li><h4 style="padding: 60px;">You must enter at least on slide in the Theme Options panel of the admin and it has to be the first slife</h4></li>
-                    <?php } ?>
                     <?php if($slide_two_img !='') { ?>
                     <li>
                         <img src="<?= $slide_two_img; ?>">
@@ -190,7 +186,9 @@
                     <?php } ?>
 
                 </ul>
-          
+        <?php } else { ?>
+            <li><h4 style="padding: 60px;">You must enter at least one slide in the Theme Options panel of the admin and it has to be the first slide</h4></li>
+        <?php } ?>
         <nav class="slides-navigation" style="z-index:10000;margin:-100px 0 0 10px;position:relative;">
             <a href="#" class="prev"><i class="fa fa-angle-left fa-2x"></i></a>
             <a href="#" class="next"><i class="fa fa-angle-right fa-2x"></i></a>

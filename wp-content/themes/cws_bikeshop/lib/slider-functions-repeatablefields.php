@@ -21,14 +21,14 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/CMB2/init.php';
 }
 
-/*add_action( 'cmb2_admin_init', 'rmvg_slides_register_repeatable_group_field_metabox' );*/
+/*add_action( 'cmb2_admin_init', 'multi_slides_register_repeatable_group_field_metabox' );*/
 /**
  * Hook in and add a metabox to demonstrate repeatable grouped fields
  */
-/*function rmvg_slides_register_repeatable_group_field_metabox() {
+/*function multi_slides_register_repeatable_group_field_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_rmvg_slides_group_';*/
+	$prefix = '_multi_slides_group_';*/
 
 	/**
 	 * Repeatable Field Groups
@@ -41,7 +41,7 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 
 	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
 	$group_field_id = $cmb_group->add_field( array(
-		'id'          => '_rmvg_slides_group_',
+		'id'          => '_multi_slides_group_',
 		'type'        => 'group',
 		'description' => __( 'Generates reusable form entries for the slides', 'cmb2' ),
 		'options'     => array(
