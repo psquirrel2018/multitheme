@@ -79,7 +79,8 @@ get_header();
                     </div>
                     <div class="col-sm-4">
                         <!-- Icon Box Type 3-->
-                        <img src="<?= $promoThreeImg; ?>">
+                        <?php $promoThreeImg_resized = aq_resize( $promoThreeImg, 280, 180, true ); //resize & crop img ?>
+                        <img src="<?= $promoThreeImg_resized; ?>">
                         <h4 class=""><?= $promoThreeTitle; ?></h4>
 
                         <p class=""><?= $promoThreeText; ?></p>
