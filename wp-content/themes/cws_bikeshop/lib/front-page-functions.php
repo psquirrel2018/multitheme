@@ -21,6 +21,14 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/CMB2/init.php';
 }
 
+function _multitheme_frontpage_show_if_front_page( $cmb ) {
+    // Don't show this metabox if it's not the front page template.
+    if ( get_option( 'page_on_front' ) !== $cmb->object_id ) {
+        return false;
+    }
+    return true;
+}
+
 add_action( 'cmb2_admin_init', 'multitheme_register_custom_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
