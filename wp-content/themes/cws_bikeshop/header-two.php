@@ -56,7 +56,7 @@
                                 <?php if ($in_url != '') {?>
                                     <li><a href="#" class="text-dark fa fa-linkedin"></a></li>
                                 <?php }; ?>
-                                <?php if (!empty($in_url) && !empty($fb_url) ) {?>
+                                <?php if (empty($in_url) && empty($fb_url) && empty($youtube_url) && empty($gplus_url) && empty($twitter_url) ) {?>
                                     <li>Add Social Media Urls to the Site Options</li>
                                 <?php }; ?>
                             </ul>
