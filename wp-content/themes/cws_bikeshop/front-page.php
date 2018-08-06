@@ -69,7 +69,7 @@ get_header();
                     <div class="col-sm-4">
                         <!-- Icon Box Type 3-->
                         <?php $promoTwoImg_resized = aq_resize( $promoTwoImg, 280, 180, true ); //resize & crop img ?>
-                        <img src="<?= $promoTwoImg_resized; ?>">
+                        <img src="<?= $promoTwoImg_resized; ?>" class="img-responsive">
                         <h4 class=""><?= $promoTwoTitle; ?></h4>
                         <p class=""><?= $promoTwoText; ?></p>
 
@@ -77,7 +77,7 @@ get_header();
                     <div class="col-sm-4">
                         <!-- Icon Box Type 3-->
                         <?php $promoThreeImg_resized = aq_resize( $promoThreeImg, 280, 180, true ); //resize & crop img ?>
-                        <img src="<?= $promoThreeImg_resized; ?>">
+                        <img src="<?= $promoThreeImg_resized; ?>" class="img-responsive">
                         <h4 class=""><?= $promoThreeTitle; ?></h4>
 
                         <p class=""><?= $promoThreeText; ?></p>
