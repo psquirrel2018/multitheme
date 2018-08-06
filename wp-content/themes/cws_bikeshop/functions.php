@@ -170,6 +170,7 @@ function cws_bike_styles() {
     //wp_register_style('font-awesome-animation.min', get_template_directory_uri() .'/css/font-awesome-animation.min.css', array(), null, 'all' );
     wp_register_style('flaticon', get_template_directory_uri() .'/css/flaticon.css', array(), null, 'all' );
     wp_register_style('superslides', get_template_directory_uri() .'/css/superslides.css', array(), null, 'all' );
+    wp_register_style('icons', get_template_directory_uri() .'/css/icons.css', array(), null, 'all' );
     wp_register_style('owl-carousel', get_template_directory_uri() .'/css/owl.carousel.css', array(), null, 'all' );
     //wp_register_style('responsive', get_template_directory_uri() .'/css/responsive.css', array(), null, 'all' );
     //wp_register_style('styles', get_stylesheet_uri(), array(), null, 'all' );
@@ -181,6 +182,7 @@ function cws_bike_styles() {
     // wp_enqueue_style( 'flaticon' );
     // wp_enqueue_style( 'animate' );
     wp_enqueue_style( 'superslides' );
+    wp_enqueue_style( 'icons' );
     // wp_enqueue_style( 'responsive' );
     //wp_enqueue_style( 'font-awesome.min' );
     //wp_enqueue_style( 'font-awesome-animate.min' );
@@ -226,8 +228,10 @@ function cws_bike_nav() {
     if (function_exists('wp_nav_menu'))
         wp_nav_menu(array('theme_location' => 'top-menu',
                         'menu_class' => 'nav navbar-nav navbar-right',
-                        'menu_id' => 'main_menu', 'container' => '',
-                        'container_class' => '', 'depth' => 2,
+                        'menu_id' => 'main_menu',
+                        'container' => false,
+                        'container_class' => '',
+                        'depth' => 2,
                         'fallback_cb' => 'cws_bike_nav_fallback',
                         'walker' => new wp_bootstrap_navwalker()));
     else

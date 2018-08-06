@@ -1,12 +1,32 @@
 <?php
+/* *
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="content">
+ *
+ * @package sparkling
+ */
 
-
-?>
-<!DOCTYPE html>
-<html lang="en">
+if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) !== false ) ) {
+    header( 'X-UA-Compatible: IE=edge,chrome=1' );
+} ?>
+<!doctype html>
+<!--[if !IE]>
+<html class="no-js non-ie" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7 ]>
+<html class="no-js ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8 ]>
+<html class="no-js ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-    <title><?php wp_title("-", true, "right"); ?> - <?php bloginfo('name'); ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="<?php //echo of_get_option( 'nav_bg_color' ); ?>">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
     <?php wp_head();
     global $post;
     $site_logo = cws_confluence_get_option( 'cws_confluence_logo' );
@@ -51,112 +71,107 @@
     $slide_three_ctaUrl = cws_confluence_get_option( 'cws_confluence_slider_three_cta_url');
 
     ?>
+
 </head>
 
-<header class="page-head">
-    <!-- CWS Navbar Transparent-->
-    <div class="cws-navbar-wrap">
-        <nav>
-            <div class="container">
-                <?php
-                if ($cws_navbar_inner === 'no-social') { get_template_part('templates/cws-navbar-inner'); }
-                else { ?>
+<body <?php body_class(); ?>>
+<header id="masthead" class="site-header" role="banner">
+    <nav class="container navbar navbar-default" role="navigation">
+        <div class="row">
+            <?php
+            if ($cws_navbar_inner === 'no-social') { get_template_part('templates/cws-navbar-inner'); }
+            else { ?>
                 <div class="cws-navbar-inner">
-                    <div class="row cws-top-bar">
-                        <div class="col-sm-4 left-side">
+                    <div class="cws-top-bar">
+                        <div class="col-sm-4 left-side hidden-xs">
                             <ul class="list-inline list-inline-sm list-inline-white text-darker">
                                 <?php if ($fb_url != '') {?>
-                                <li><a href="#" class="text-dark fa fa-facebook"></a></li>
+                                    <li><a href="#" class="text-dark fa fa-facebook"></a></li>
                                 <?php }; ?>
                                 <?php if ($twitter_url != '') {?>
-                                <li><a href="#" class="text-dark fa fa-twitter"></a></li>
+                                    <li><a href="#" class="text-dark fa fa-twitter"></a></li>
                                 <?php }; ?>
                                 <?php if ($gplus_url != '') {?>
-                                <li><a href="#" class="text-dark fa fa-google-plus"></a></li>
+                                    <li><a href="#" class="text-dark fa fa-google-plus"></a></li>
                                 <?php }; ?>
                                 <?php if ($youtube_url != '') {?>
-                                <li><a href="#" class="text-dark fa fa-youtube"></a></li>
+                                    <li><a href="#" class="text-dark fa fa-youtube"></a></li>
                                 <?php }; ?>
                                 <?php if ($in_url != '') {?>
-                                <li><a href="#" class="text-dark fa fa-linkedin"></a></li>
+                                    <li><a href="#" class="text-dark fa fa-linkedin"></a></li>
                                 <?php }; ?>
                                 <?php if (empty($in_url) && empty($fb_url) && empty($youtube_url) && empty($gplus_url) && empty($twitter_url) ) {?>
                                     <li>Add Social Media Urls to the Site Options</li>
                                 <?php }; ?>
                             </ul>
                         </div>
-                        <div class="col-sm-4 text-center">
-                            <!--<address class="contact-info text-left"><span><span class="icon mdi mdi-map-marker"></span><a href="#" class="text-middle p text-dark">4578 Marmora St, San Francisco D04 89GR</a></span></address>-->
+                        <div class="col-sm-4">
                             <?php if ($business_email != '') {?>
-                                    <div class="phone">
-                                        <address class="contact-info text-left"><span><span class="icon mdi mdi-email"></span><a href="#" class="text-middle p text-dark"><?= $business_email;?></a></span></address>
-                                    </div>
-                                        <?php } else { ?>
-                                        Go to site options and add an email address
-                                    <?php }; ?></span></address>
-                        </div>
-                        <div class="col-sm-4 text-right">
-                            <?php if ($phone != '') {?>
-                            <div class="phone">
-                                <address class="contact-info text-right"><span><span class="icon mdi mdi-cellphone-android"></span><a href="callto:<?= $phone;?>" class="text-middle p text-dark"><?= $phone;?></a></span></address>
-                            </div>
-                                <?php } else { ?>
-                                        Go to site options and add a #
-                                    <?php }; ?></span></address>
-                        </div>
-                    </div>
-                    <hr>
-                    <!-- RD Navbar Panel-->
-                    <div class="row">
-                        <div class="col-md-4 cws-navbar-panel">
-                            <!--Navbar Brand-->
-                            <div class="cws-navbar-brand">
-                                    <?php if ($site_logo != '') {?>
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-                                            <img class="img-responsive logo" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/images/cws_bikeshop_logo.png" alt="<?php bloginfo( 'name' ); ?>"  />
-                                        </a>
-                                    <?php }; ?>
-                            </div>
-                        </div>
-                        <div class="col-md-8 cws-navbar-menu-wrap">
-                            <div class="cws-navbar-nav-wrap">
-                                <div class="cws-navbar-mobile-scroll">
-                                    <!--Navbar Brand Mobile-->
-                                    <div class="cws-navbar-mobile-brand"></div>
-                                    <div class="navbar navbar-default collapse navbar-collapse" id="navbar">
-                                        <?php echo cws_bike_nav(); ?>
-                                    </div>
+                                <div class="email">
+                                    <address class="contact-info"><span class="icon mdi mdi-email"></span><a href="" class="text-middle"><?= $business_email; ?></a></address>
                                 </div>
-                            </div>
+                            <?php } else { ?>
+                            Go to site options and add an email address
+                            <?php }; ?></span></address>
+                        </div>
+                        <div class="col-sm-4">
+                            <?php if ($phone != '') {?>
+                                <div class="phone">
+                                    <address class="contact-info"><span class="icon mdi mdi-cellphone-android"></span><a href="callto:<?= $phone; ?>" class="text-middle"><?= $phone; ?></a></address>
+                                </div>
+                            <?php } else { ?>
+                            Go to site options and add a #
+                            <?php }; ?></span></address>
                         </div>
                     </div>
                 </div>
-                <?php } ?>
+            <?php } ?>
+        </div>
+        <hr>
+        <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <?php if ($site_logo != '') {?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
+                        <img class="img-responsive logo" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
+                    </a>
+                <?php } else { ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/cws_bikeshop_logo.png" alt="<?php bloginfo( 'name' ); ?>"  />
+                    </a>
+                <?php }; ?>
             </div>
-        </nav>
-    </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <?php echo cws_bike_nav(); ?>
+            </div>
+        </div>
+    </nav>
+
 
     <div id="slider" style="max-height:600px !important;">
         <?php if($slide_one_img !='') { ?>
-                <ul class="slides-container">
-                    <!-- Slide container -->
-                    <li>
-                        <img src="<?= $slide_one_img; ?>">
-                        <div class="tint">
-                            <div class="content text-center">
-                                <h1>    <?= $slide_one_title; ?> </h1>
-                                <h5><?= $slide_one_secondaryTitle; ?></h5>
-                                <div class="small">--- <?= $slide_one_sm_text; ?></div>
-                                <p><a href="<?= $slide_one_ctaUrl; ?>"
-                                      class="btn btn-primary"><?= $slide_one_cta; ?></a></p>
-                            </div>
+            <ul class="slides-container">
+                <!-- Slide container -->
+                <li>
+                    <img src="<?= $slide_one_img; ?>">
+                    <div class="tint">
+                        <div class="content text-center">
+                            <h1>    <?= $slide_one_title; ?> </h1>
+                            <h5><?= $slide_one_secondaryTitle; ?></h5>
+                            <div class="small">--- <?= $slide_one_sm_text; ?></div>
+                            <p><a href="<?= $slide_one_ctaUrl; ?>"
+                                  class="btn btn-primary"><?= $slide_one_cta; ?></a></p>
                         </div>
-                    </li>
-                    <?php if($slide_two_img !='') { ?>
+                    </div>
+                </li>
+                <?php if($slide_two_img !='') { ?>
                     <li>
                         <img src="<?= $slide_two_img; ?>">
                         <div class="tint">
@@ -169,8 +184,8 @@
                             </div>
                         </div>
                     </li>
-                    <?php } ?>
-                    <?php if($slide_three_img !='') { ?>
+                <?php } ?>
+                <?php if($slide_three_img !='') { ?>
                     <li>
                         <img src="<?= $slide_three_img; ?>">
                         <div class="tint">
@@ -183,9 +198,9 @@
                             </div>
                         </div>
                     </li>
-                    <?php } ?>
+                <?php } ?>
 
-                </ul>
+            </ul>
         <?php } else { ?>
             <li><h4 style="padding: 60px;">You must enter at least one slide in the Theme Options panel of the admin and it has to be the first slide</h4></li>
         <?php } ?>
@@ -194,4 +209,4 @@
             <a href="#" class="next"><i class="fa fa-angle-right fa-2x"></i></a>
         </nav>
     </div>
-</header>
+</header><!-- #masthead -->
