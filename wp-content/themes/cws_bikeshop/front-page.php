@@ -44,12 +44,9 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-
-                            <h1><?= $welcomeTitle; ?></h1>
-                            <hr class="divider">
-                            <p class=""><?php the_content(); ?></p>
-
-
+                        <h1><?= $welcomeTitle; ?></h1>
+                        <hr class="divider">
+                        <p class=""><?php the_content(); ?></p>
                     </div>
                 </div>
             </div>
@@ -88,7 +85,6 @@ get_header();
                     </div>
                 </div>
         </section>
-        </div>
         <!-- Our Services-->
         <?php endwhile; ?>
         <section class="shell-wide">
@@ -105,9 +101,12 @@ get_header();
                     <div class="bg-overlay-info">
                         <div class="shell section-top-66 section-bottom-66 section-lg-bottom-0">
                             <div class="range range-xs-center range-xs-middle">
-                                <div class="col-sm-10 col-md-11 col-lg-4 text-sm-left section-lg-bottom-85">
+                                <div class="col-sm-10 col-md-11 col-lg-8 text-sm-left section-lg-bottom-85">
+                                    <h2><?= $lifestyleTagline; ?></h2>
+                                    <?= $lifestyleText; ?><br />
+                                    <?= $lifestyleCta; ?>
                                   </div>
-                                <div class="col-lg-4"><img src="" width="332" height="418" alt="" class="veil reveal-lg-block"></div>
+                                <div class="col-lg-4 text-sm-left section-lg-bottom-85 range-middle" style="min-height:420px;"></div>
                             </div>
                         </div>
                     </div>

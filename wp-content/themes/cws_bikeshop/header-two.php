@@ -11,6 +11,7 @@
     global $post;
     $site_logo = cws_confluence_get_option( 'cws_confluence_logo' );
     $business_phone = cws_confluence_get_option( 'cws_confluence_phone' );
+    $phone = cws_confluence_get_option( 'cws_confluence_phone' );
     $business_email = cws_confluence_get_option( 'cws_confluence_email' );
     $business_address = cws_confluence_get_option( 'cws_confluence_address' );
 
@@ -29,17 +30,16 @@
     ?>
 </head>
 
-<header class="page-head">
-    <!-- CWS Navbar Transparent-->
-    <div class="cws-navbar-wrap">
-        <nav >
-            <div class="container">
-                <?php
-                if ($cws_navbar_inner === 'no-social') { get_template_part('templates/cws-navbar-inner'); }
-                else { ?>
+<body <?php body_class(); ?>>
+<header id="masthead" class="site-header" role="banner">
+    <nav class="container navbar navbar-default" role="navigation">
+        <div class="row">
+            <?php
+            if ($cws_navbar_inner === 'no-social') { get_template_part('templates/cws-navbar-inner'); }
+            else { ?>
                 <div class="cws-navbar-inner">
-                    <div class="row cws-top-bar">
-                        <div class="col-sm-4 left-side">
+                    <div class="cws-top-bar">
+                        <div class="col-sm-4 left-side hidden-xs">
                             <ul class="list-inline list-inline-sm list-inline-white text-darker">
                                 <?php if ($fb_url != '') {?>
                                     <li><a href="#" class="text-dark fa fa-facebook"></a></li>
@@ -61,59 +61,53 @@
                                 <?php }; ?>
                             </ul>
                         </div>
-                        <div class="col-sm-4 text-center">
-                            <!--<address class="contact-info text-left"><span><span class="icon mdi mdi-map-marker"></span><a href="#" class="text-middle p text-dark">4578 Marmora St, San Francisco D04 89GR</a></span></address>-->
+                        <div class="col-sm-4">
                             <?php if ($business_email != '') {?>
-                                <div class="phone">
-                                    <address class="contact-info text-left"><span><span class="icon mdi mdi-email"></span><a href="" class="text-middle p text-dark"><?= $business_email; ?></a></span></address>
+                                <div class="email">
+                                    <address class="contact-info"><span class="icon mdi mdi-email"></span><a href="" class="text-middle"><?= $business_email; ?></a></address>
                                 </div>
                             <?php } else { ?>
                             Go to site options and add an email address
                             <?php }; ?></span></address>
                         </div>
-                        <div class="col-sm-4 text-right">
-                            <?php if ($business_phone != '') {?>
+                        <div class="col-sm-4">
+                            <?php if ($phone != '') {?>
                                 <div class="phone">
-                                    <address class="contact-info text-right"><span><span class="icon mdi mdi-cellphone-android"></span><a href="callto:<?= $business_phone;?>" class="text-middle p text-dark"><?= $business_phone; ?></a></span></address>
+                                    <address class="contact-info"><span class="icon mdi mdi-cellphone-android"></span><a href="callto:<?= $phone; ?>" class="text-middle"><?= $phone; ?></a></address>
                                 </div>
                             <?php } else { ?>
                             Go to site options and add a #
                             <?php }; ?></span></address>
                         </div>
                     </div>
-                    <hr>
-                    <!-- RD Navbar Panel-->
-                    <div class="row">
-                        <div class="col-sm-4 cws-navbar-panel">
-                            <!--Navbar Brand-->
-                            <div class="cws-navbar-brand"><a href="http://rmvg.dev">
-                                    <?php if ($site_logo != '') {?>
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-                                            <img class="img-responsive" src='<?= $site_logo; ?>' alt='Rocky Mountain Vision Group Logo'/>
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/images/cws_bikeshop_logo.png" alt="<?php bloginfo( 'name' ); ?>"  />
-                                        </a>
-                                    <?php }; ?>
-                            </div>
-                        </div>
-                        <div class="col-sm-8 cws-navbar-menu-wrap">
-                            <div class="cws-navbar-nav-wrap">
-                                <div class="cws-navbar-mobile-scroll">
-                                    <!--Navbar Brand Mobile-->
-                                    <div class="cws-navbar-mobile-brand"></div>
-                                    <div class="navbar navbar-default collapse navbar-collapse" id="navbar">
-                                        <?php echo cws_bike_nav(); ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <?php } ?>
+            <?php } ?>
+        </div>
+        <hr>
+        <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <?php if ($site_logo != '') {?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
+                        <img class="img-responsive logo" src='<?= $site_logo; ?>' alt='<?php bloginfo( 'name' ); ?>'/>
+                    </a>
+                <?php } else { ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php bloginfo( 'name' ); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/cws_bikeshop_logo.png" alt="<?php bloginfo( 'name' ); ?>"  />
+                    </a>
+                <?php }; ?>
             </div>
-        </nav>
-    </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <?php echo cws_bike_nav(); ?>
+            </div>
+        </div>
+    </nav>
+</header><!-- #masthead -->
 
-</header>
