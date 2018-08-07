@@ -35,72 +35,159 @@ function cws_enqueue_dynamic_css() {
     a:hover, a:active {color: #<?php echo $font_color;?>}
     a:focus {outline: none}
 
-    hr {
-    background-color:#<?php echo $font_color;?>;
-    }
+    body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #434345;
+    background-color: #ffffff; }
 
-    #header div#logo h1 a, #header div#logo h4 a {
-    color: #<?php echo $font_color;?>;
-    font-size: 37px;
-    line-height: 130%;
-    }
 
-    /* > Navigation
-    -------------------------------------------------------------- */
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 1px solid #f5f5f5; }
 
-    ul#nav {
-    background:url("") no-repeat scroll 0 0 transparent;
-    bottom:2px;
-    list-style:none outside none;
-    margin:15px 0 0;
-    max-width:100%;
-    min-width:100%;
-    padding:45px 0 5px 0;
-    position:relative;
-    left: 20px;
-    right: 15px;
-    }
+/** 1.4  Type */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    color: inherit; }
 
-    ul#nav li {
-    float:left;
-    margin:0;
-    padding:6px 28px 0 0;
-    }
+.navbar-default {
+    background-color: #fff;
+    border-color: #e7e7e7; }
 
-    ul#nav li a {
-    -moz-background-inline-policy:continuous;
-    -moz-border-radius-topleft:3px;
-    border-top-left-radius:3px;
-    -webkit-border-top-left-radius:3px;
-    -moz-border-radius-topright:3px;
-    border-top-right-radius:3px;
-    -webkit-border-top-right-radius:3px;
-    background:none repeat scroll 0 0 transparent;
-    color:#<?php echo $font_color;?>;
-    display:block;
-    font-size:13px;
-    font-weight:bold;
-    padding:0;
-    }
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #247eda; }
 
-    ul#nav li.selected, ul#nav li.selected a, ul#nav li.current_page_item a {
-    background:none repeat scroll 0 0;
-    color: #<?php echo $link_color;?>;
-    }
+.navbar-default .navbar-link {
+    color: #434345; }
+.navbar-default .navbar-link:hover {
+    color: #434345; }
+.navbar-default .btn-link {
+    color: #434345; }
+.navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
+    color: #434345; }
 
-    ul#nav a:focus {outline: none}
+/** 2.7  Dividers*/
+.hr {
+    height: 1px;
+    padding: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #f5f5f5;
+    border: none; }
 
-    #nav-home {
-    float:left;
-    }
-    <?php if($cap->menu_x ==__("right",'cc')){?>
-        #nav-home {
-        float: right;
-        }
-    <?php } ?>
-    #nav-community {
-    float:left;
-    }
+h1 a:hover, .h1 a:hover,
+h2 a:hover, .h2 a:hover,
+h3 a:hover, .h3 a:hover,
+h4 a:hover, .h4 a:hover,
+h5 a:hover, .h5 a:hover,
+h6 a:hover, .h6 a:hover {
+    color: #59a1ed; }
+
+.btn-primary {
+    color: #fff;
+    background-color: #247eda;
+    border-color: #247eda; }
+
+.btn-info {
+    color: #fff;
+    background-color: #3695eb;
+    border-color: #3695eb; }
+
+/* 3. SLIDER
+-------------------------------------------------------------------*/
+
+#slider .tint {
+    background: rgba(0,0,0,0.4);
+    height: 100%;
+}
+
+/* 3.1. ARROWS & PAGINATION
+---------------------------------------------------------------*/
+
+.slides-navigation a {
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    opacity: 0.4;
+    padding: 10px 20px 10px 15px;
+}
+
+.slides-navigation a:hover {
+    opacity: 1;
+}
+
+.slides-pagination {
+    bottom: 15px;
+}
+
+.slides-pagination a {
+    border: 1px solid #fff;
+}
+
+.slides-pagination a.current {
+    background: #fff;
+}
+
+#slider .content h1,
+#slider .content h5 {
+    color: #fff;
+}
+
+
+.phone .contact-info .icon{
+    color: #3695eb;
+    font-size: 24px;
+}
+
+.phone {color:#3695eb;text-align: right;}
+
+.email .contact-info .icon{
+    color: #3695eb;
+    font-size: 24px;
+}
+
+.email {color:#3695eb;text-align: center;}
+
+[class*='fa-']:before {
+    color: #5eaaef;
+}
+
+.navbar-default {
+    background-color: #fff;
+    border:0;
+}
+
+.page {
+    overflow: auto;
+    background-color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-size: 18px;
+    color: #737373;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 14px 15px;
+    font-weight: bold;
+}
+
+.dropdown-menu > li > a {
+    font-weight: 400;
+    padding: 5px 20px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #5eaaef;
+    color: #fff;
+}
 
 </style>
 

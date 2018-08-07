@@ -125,6 +125,37 @@ class my_Admin {
         }
 
         $this->option_metabox[] = array(
+            'id'         => 'site_setup', //id used as tab page slug, must be unique
+            'title'      => 'Required Site Set Up Fields',
+            'show_on'    => array( 'key' => 'options-page', 'value' => array( 'site_setup' ), ), //value must be same as id
+            'show_names' => true,
+            'fields'     => array(
+                array(
+                    'name'    => 'Homepage Slider or Static Image',
+                    'id'      => 'cws_confluence_homepage_layout',
+                    'type'    => 'radio_inline',
+                    'options' => array(
+                        'slider' => __( 'Slider', 'cmb2' ),
+                        'static_image'   => __( 'Static Image', 'cmb2' ),
+                    ),
+                    'default' => 'static_image',
+                ),
+                array(
+                    'name'    => 'Promo Section',
+                    'desc'    => 'Hide or show promo section',
+                    'id'      => 'cws_confluence_promo',
+                    'type'    => 'radio_inline',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'show' => __( 'Show', 'cmb2' ),
+                        'hide'   => __( 'Hide', 'cmb2' ),
+                    ),
+                    'default' => 'hide',
+                ),
+            )
+        );
+
+        $this->option_metabox[] = array(
             'id'         => 'general_options', //id used as tab page slug, must be unique
             'title'      => 'General Options',
             'show_on'    => array( 'key' => 'options-page', 'value' => array( 'general_options' ), ), //value must be same as id
@@ -166,13 +197,6 @@ class my_Admin {
                     'id'      => 'cws_confluence_address',
                     'type'    => 'wysiwyg',
                     'options' => array('textarea_rows' => 5,),
-                ),
-                array(
-                    'name' => __('Site Keywords', 'theme_textdomain'),
-                    'desc' => __('Keywords describing this site, comma separated.', 'theme_textdomain'),
-                    'id' => 'site_keywords',
-                    'default' => '',
-                    'type' => 'textarea_small',
                 ),
             )
         );
@@ -220,6 +244,52 @@ class my_Admin {
                     'id' => 'cws_confluence_gplus_url',
                     'default' => '',
                     'type' => 'text_url'
+                ),
+                array(
+                    'name' => __('LinkedIn', 'theme_textdomain'),
+                    'desc' => __('LinkedIn Url', 'theme_textdomain'),
+                    'id' => 'cws_confluence_in_url',
+                    'default' => '',
+                    'type' => 'text_url'
+                ),
+            )
+        );
+
+        $this->option_metabox[] = array(
+            'id'         => 'slider_options', //id used as tab page slug, must be unique
+            'title'      => 'Slider Options',
+            'show_on'    => array( 'key' => 'options-page', 'value' => array( 'slider_options' ), ), //value must be same as id
+            'show_names' => true,
+            'fields'     => array(
+                array(
+                    'name'    => 'Slide One',
+                    'desc'    => 'Upload an image or enter an URL.',
+                    'id'      => 'cws_confluence_slider_one_image',
+                    'type'    => 'file',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name'    => 'Slide Two',
+                    'desc'    => 'Upload an image or enter an URL.',
+                    'id'      => 'cws_confluence_slider_two_image',
+                    'type'    => 'file',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name'    => 'Slide Three',
+                    'desc'    => 'Upload an image or enter an URL.',
+                    'id'      => 'cws_confluence_slider_three_image',
+                    'type'    => 'file',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
                 ),
             )
         );
