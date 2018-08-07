@@ -125,7 +125,7 @@ class cws_Admin {
 
 		// Set our CMB2 fields
 		// LOGO file uploaders
-		$cmb->add_field( array(
+		/*$cmb->add_field( array(
 			'name'    => 'Your Site Logo',
 			'desc'    => 'Upload an image or enter an URL.',
 			'id'      => 'cws_confluence_logo',
@@ -134,10 +134,10 @@ class cws_Admin {
 			'options' => array(
 				'url' => false,
 			),
-		) );
+		) );*/
 
 		//Phone Number
-        $cmb->add_field( array(
+       /* $cmb->add_field( array(
             'name'    => 'Business Phone',
             'desc'    => 'Phone Number you want displayed in the header of the site',
             'id'      => 'cws_confluence_phone',
@@ -146,10 +146,10 @@ class cws_Admin {
             'options' => array(
                 'url' => false,
             ),
-        ) );
+        ) );*/
 
 		//Email address
-        $cmb->add_field( array(
+        /*$cmb->add_field( array(
             'name'    => 'Business Email',
             'desc'    => 'info@, requests@, contactus@, etc',
             'id'      => 'cws_confluence_email',
@@ -158,19 +158,19 @@ class cws_Admin {
             'options' => array(
                 'url' => false,
             ),
-        ) );
+        ) );*/
 
 		//address
-		$cmb->add_field( array(
+		/*$cmb->add_field( array(
 			'name'    => 'Business Address',
 			'desc'    => 'Address you want displayed on the site',
 			'id'      => 'cws_confluence_address',
 			'type'    => 'wysiwyg',
 			'options' => array('textarea_rows' => 5,),
-		) );
+		) );*/
 
 		// Social Media toggle
-		$cmb->add_field( array(
+		/*$cmb->add_field( array(
 			'name'    => 'Hide Social Media icons and move the Email address over to the left',
 			'id'      => 'cws_confluence_sm_layout',
 			'type'    => 'radio_inline',
@@ -208,22 +208,10 @@ class cws_Admin {
 			'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
 			'id'   => 'cws_confluence_in_url',
 			'type' => 'text_url',
-		) );
-
-
-		$cmb->add_field( array(
-			'name' => esc_html__( 'oEmbed', 'cmb2' ),
-			'desc' => sprintf(
-			/* translators: %s: link to codex.wordpress.org/Embeds */
-				esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'cmb2' ),
-				'<a href="https://codex.wordpress.org/Embeds">codex.wordpress.org/Embeds</a>'
-			),
-			'id'   => 'cws_confluence_embed_url',
-			'type' => 'oembed',
-		) );
+		) );*/
 
 		// Promo images
-		$cmb->add_field( array(
+		/*$cmb->add_field( array(
 			'name'    => 'First Promo/Featured Image',
 			'desc'    => 'Upload an image or enter an URL.',
 			'id'      => 'cws_confluence_promo1_img',
@@ -252,16 +240,16 @@ class cws_Admin {
 			'options' => array(
 				'url' => false,
 			),
-		) );
+		) );*/
 
 //slide_one_image
 
-			$cmb->add_field(array(
+			/*$cmb->add_field(array(
 				'name' => __('Slide one image', 'cmb2'),
 				'desc' => __('Upload an image or enter a URL.  This will be the image that shows up next to the Welcome Message - 1400x900', 'cmb2'),
 				'id' =>  'cws_confluence_slider_one_image',
 				'type' => 'file',
-			));
+			));*/
 
 			$cmb->add_field(array(
 				'name' => __('Slide One Big Text', 'cmb2'),
@@ -302,12 +290,12 @@ class cws_Admin {
 
 			//two
 
-			$cmb->add_field(array(
+			/*$cmb->add_field(array(
 				'name' => __('Slide Two image', 'cmb2'),
 				'desc' => __('Upload an image or enter a URL.  This will be the image that shows up next to the Welcome Message - 1400x900', 'cmb2'),
 				'id' =>  'cws_confluence_slider_two_image',
 				'type' => 'file',
-			));
+			));*/
 
 			$cmb->add_field(array(
 				'name' => __('Slide Two Big Text', 'cmb2'),
@@ -348,12 +336,12 @@ class cws_Admin {
 
 			//three
 
-			$cmb->add_field(array(
+			/*$cmb->add_field(array(
 				'name' => __('Slide Three image', 'cmb2'),
 				'desc' => __('Upload an image or enter a URL.  This will be the image that shows up next to the Welcome Message - 1400x900', 'cmb2'),
 				'id' =>  'cws_confluence_slider_three_image',
 				'type' => 'file',
-			));
+			));*/
 
 			$cmb->add_field(array(
 				'name' => __('Slide Three Big Text', 'cmb2'),
