@@ -272,6 +272,56 @@ class my_Admin {
                     ),
                 ),
                 array(
+                    'name' => __('Slide One Big Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_one_lgText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide One Medium Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_one_mdText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide One Small Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_one_smText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide One CTA Text', 'cmb2'),
+                    'desc' => __('Learn More, Book Now, etc.', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_one_cta',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => esc_html__( 'Slide One CTA URL', 'cmb2' ),
+                    'desc' => esc_html__( 'What page should the CTA (Call to action) button go to?', 'cmb2' ),
+                    'id'   => 'cws_confluence_slider_one_ctaUrl',
+                    'type' => 'text_url',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
                     'name'    => 'Slide Two',
                     'desc'    => 'Upload an image or enter an URL.',
                     'id'      => 'cws_confluence_slider_two_image',
@@ -282,10 +332,110 @@ class my_Admin {
                     ),
                 ),
                 array(
+                    'name' => __('Slide Two Big Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_two_lgText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide Two Medium Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_two_mdText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide Two Small Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_two_smText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide Two CTA Text', 'cmb2'),
+                    'desc' => __('Learn More, Book Now, etc.', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_two_cta',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => esc_html__( 'Slide Two CTA URL', 'cmb2' ),
+                    'desc' => esc_html__( 'What page should the CTA (Call to action) button go to?', 'cmb2' ),
+                    'id'   => 'cws_confluence_slider_two_ctaUrl',
+                    'type' => 'text_url',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
                     'name'    => 'Slide Three',
                     'desc'    => 'Upload an image or enter an URL.',
                     'id'      => 'cws_confluence_slider_three_image',
                     'type'    => 'file',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide Three Big Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_three_lgText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide Three Medium Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_three_mdText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide Three Small Text', 'cmb2'),
+                    'desc' => __('field description (optional)', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_three_smText',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => __('Slide Three CTA Text', 'cmb2'),
+                    'desc' => __('Learn More, Book Now, etc.', 'cmb2'),
+                    'id' =>  'cws_confluence_slider_three_cta',
+                    'type' => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name' => esc_html__( 'Slide Three CTA URL', 'cmb2' ),
+                    'desc' => esc_html__( 'What page should the CTA (Call to action) button go to?', 'cmb2' ),
+                    'id'   => 'cws_confluence_slider_three_ctaUrl',
+                    'type' => 'text_url',
                     // Optionally hide the text input for the url:
                     'options' => array(
                         'url' => false,
