@@ -61,26 +61,26 @@ get_header();
                 <div class="row">
                     <div class="col-sm-4">
                         <!-- Icon Box Type 3-->
-                        <?php $promoOneImg_resized = aq_resize( $promoOneImg, 280, 180, true ); //resize & crop img ?>
+                        <?php $promoOneImg_resized = aq_resize( $promoOneImg, 360, 240, true ); //resize & crop img ?>
                         <img src="<?= $promoOneImg_resized; ?>" class="img-responsive">
-                        <h4 class=""><?= $promoOneTitle; ?></h4>
-                        <p class="">  <?= $promoOneText; ?>   </p>
+                        <h4 class="text-center"><?= $promoOneTitle; ?></h4>
+                        <p class="text-center">  <?= $promoOneText; ?>   </p>
                     </div>
                     <div class="col-sm-4">
                         <!-- Icon Box Type 3-->
-                        <?php $promoTwoImg_resized = aq_resize( $promoTwoImg, 280, 180, true ); //resize & crop img ?>
+                        <?php $promoTwoImg_resized = aq_resize( $promoTwoImg, 360, 240, true ); //resize & crop img ?>
                         <img src="<?= $promoTwoImg_resized; ?>" class="img-responsive">
-                        <h4 class=""><?= $promoTwoTitle; ?></h4>
-                        <p class=""><?= $promoTwoText; ?></p>
+                        <h4 class="text-center"><?= $promoTwoTitle; ?></h4>
+                        <p class="text-center"><?= $promoTwoText; ?></p>
 
                     </div>
                     <div class="col-sm-4">
                         <!-- Icon Box Type 3-->
-                        <?php $promoThreeImg_resized = aq_resize( $promoThreeImg, 280, 180, true ); //resize & crop img ?>
+                        <?php $promoThreeImg_resized = aq_resize( $promoThreeImg, 360, 240, true ); //resize & crop img ?>
                         <img src="<?= $promoThreeImg_resized; ?>" class="img-responsive">
-                        <h4 class=""><?= $promoThreeTitle; ?></h4>
+                        <h4 class="text-center"><?= $promoThreeTitle; ?></h4>
 
-                        <p class=""><?= $promoThreeText; ?></p>
+                        <p class="text-center"><?= $promoThreeText; ?></p>
 
                     </div>
                 </div>
@@ -103,10 +103,10 @@ get_header();
                             <div class="range range-xs-center range-xs-middle">
                                 <div class="col-sm-10 col-md-11 col-lg-8 text-sm-left section-lg-bottom-85">
                                     <h2><?= $lifestyleTagline; ?></h2>
-                                    <?= $lifestyleText; ?><br />
-                                    <?= $lifestyleCta; ?>
+                                    <h6 style="padding-bottom:20px;"><?= $lifestyleText; ?></h6>
+                                    <a href="<?= $lifestyleUrl; ?>" class="btn btn-danger btn-lg"><?= $lifestyleCta; ?></a>
                                   </div>
-                                <div class="col-lg-4 text-sm-left section-lg-bottom-85 range-middle" style="min-height:420px;"></div>
+                                <div class="col-lg-4 text-sm-left section-lg-bottom-85" style="min-height:420px;"></div>
                             </div>
                         </div>
                     </div>
