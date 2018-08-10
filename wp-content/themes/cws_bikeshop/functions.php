@@ -1,6 +1,6 @@
 <?php
 require_once( dirname(__FILE__) . '/lib/theme-options-cmb.php');
-require_once( dirname(__FILE__) . '/lib/theme-options-cmb-old.php');
+//require_once( dirname(__FILE__) . '/lib/theme-options-cmb-old.php');
 require_once( dirname(__FILE__) . '/lib/front-page-functions.php');
 require_once( dirname(__FILE__) . '/lib/secondary-functions.php');
 require_once( dirname(__FILE__) . '/lib/slider-functions.php');

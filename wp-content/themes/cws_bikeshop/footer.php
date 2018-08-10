@@ -1,7 +1,7 @@
 <?php
 
-$officeOneAddress = cws_confluence_get_option( 'cws_confluence_address' );
-$phone = cws_confluence_get_option( 'cws_confluence_phone' );
+$officeOneAddress = cws_confluence_get_option2( 'cws_confluence_address' );
+$phone = cws_confluence_get_option2( 'cws_confluence_phone' );
 
 ?>
 
