@@ -50,25 +50,25 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
     //$slider_id = cws_confluence_get_option($post->ID, '_confluence_frontpage_slider_id');
     //one
     $slide_one_img = cws_confluence_get_option2( 'cws_confluence_slider_one_image');
-    $slide_one_title = cws_confluence_get_option( 'cws_confluence_slider_one_lgText');
-    $slide_one_secondaryTitle = cws_confluence_get_option( 'cws_confluence_slider_one_mdText');
-    $slide_one_sm_text = cws_confluence_get_option( 'cws_confluence_slider_one_smText');
-    $slide_one_cta = cws_confluence_get_option( 'cws_confluence_slider_one_cta');
-    $slide_one_ctaUrl = cws_confluence_get_option( 'cws_confluence_slider_one_cta_url');
+    $slide_one_title = cws_confluence_get_option2( 'cws_confluence_slider_one_lgText');
+    $slide_one_secondaryTitle = cws_confluence_get_option2( 'cws_confluence_slider_one_mdText');
+    $slide_one_sm_text = cws_confluence_get_option2( 'cws_confluence_slider_one_smText');
+    $slide_one_cta = cws_confluence_get_option2( 'cws_confluence_slider_one_cta');
+    $slide_one_ctaUrl = cws_confluence_get_option2( 'cws_confluence_slider_one_cta_url');
     //two
     $slide_two_img = cws_confluence_get_option2( 'cws_confluence_slider_two_image');
-    $slide_two_title = cws_confluence_get_option( 'cws_confluence_slider_two_lgText');
-    $slide_two_secondaryTitle = cws_confluence_get_option( 'cws_confluence_slider_two_mdText');
-    $slide_two_sm_text = cws_confluence_get_option( 'cws_confluence_slider_two_smText');
-    $slide_two_cta = cws_confluence_get_option( 'cws_confluence_slider_two_cta');
-    $slide_two_ctaUrl = cws_confluence_get_option( 'cws_confluence_slider_two_cta_url');
+    $slide_two_title = cws_confluence_get_option2( 'cws_confluence_slider_two_lgText');
+    $slide_two_secondaryTitle = cws_confluence_get_option2( 'cws_confluence_slider_two_mdText');
+    $slide_two_sm_text = cws_confluence_get_option2( 'cws_confluence_slider_two_smText');
+    $slide_two_cta = cws_confluence_get_option2( 'cws_confluence_slider_two_cta');
+    $slide_two_ctaUrl = cws_confluence_get_option2( 'cws_confluence_slider_two_cta_url');
     //three
     $slide_three_img = cws_confluence_get_option2( 'cws_confluence_slider_three_image');
-    $slide_three_title = cws_confluence_get_option( 'cws_confluence_slider_three_lgText');
-    $slide_three_secondaryTitle = cws_confluence_get_option( 'cws_confluence_slider_three_mdText');
-    $slide_three_sm_text = cws_confluence_get_option( 'cws_confluence_slider_three_smText');
-    $slide_three_cta = cws_confluence_get_option( 'cws_confluence_slider_three_cta');
-    $slide_three_ctaUrl = cws_confluence_get_option( 'cws_confluence_slider_three_cta_url');
+    $slide_three_title = cws_confluence_get_option2( 'cws_confluence_slider_three_lgText');
+    $slide_three_secondaryTitle = cws_confluence_get_option2( 'cws_confluence_slider_three_mdText');
+    $slide_three_sm_text = cws_confluence_get_option2( 'cws_confluence_slider_three_smText');
+    $slide_three_cta = cws_confluence_get_option2( 'cws_confluence_slider_three_cta');
+    $slide_three_ctaUrl = cws_confluence_get_option2( 'cws_confluence_slider_three_cta_url');
 
     ?>
 
