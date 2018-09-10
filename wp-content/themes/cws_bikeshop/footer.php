@@ -42,7 +42,7 @@ $phone = cws_confluence_get_option2( 'cws_confluence_phone' );
     <div class="footer-bottom" style="padding-top: 10px;background-color: #000;">
         <div class="container">
             <!--Copyright-->
-            <div class="copyright">2017 &copy; Your Company Name. Designed with &ensp;<span class="fa fa-heart"></span>&ensp; by RepairTraq.com</div>
+            <div class="copyright">2018 &copy; Your Company Name. Designed with &ensp;<span class="fa fa-heart"></span>&ensp; by <a href="https://confluence.solutions">Confluence Web Solutions</a></div>
             <div class="social-links">
                 <!--<a href="https://www.facebook.com/Brush-Creek-Landscaping-1432630706980539" class="icon fa fa-facebook-f"></a>-->
                 <!--<a href="" class="icon fa fa-pinterest"></a>

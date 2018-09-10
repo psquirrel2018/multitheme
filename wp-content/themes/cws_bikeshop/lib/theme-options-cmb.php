@@ -202,6 +202,61 @@ class my_Admin {
         );
 
         $this->option_metabox[] = array(
+            'id'         => 'pricing_options', //id used as tab page slug, must be unique
+            'title'      => 'Pricing Options',
+            'show_on'    => array( 'key' => 'options-page', 'value' => array( 'pricing_options' ), ), //value must be same as id
+            'show_names' => true,
+            'fields'     => array(
+                array(
+                    'name'    => 'Hide Pricing Section',
+                    'id'      => 'cws_confluence_pricing_layout',
+                    'type'    => 'radio_inline',
+                    'options' => array(
+                        'pricing' => __( 'Yes, Add my Pricing to the homepage', 'cmb2' ),
+                        'no-pricing'   => __( 'Not right now.', 'cmb2' ),
+                    ),
+                    'default' => 'no-pricing',
+                ),
+                array(
+                    'name'    => 'Pricing Tier One',
+                    'desc'    => 'Give this a tit;e such as Basic, Bronze, Starter...',
+                    'id'      => 'cws_confluence_tier_one',
+                    'type'    => 'text',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name'    => 'Tier One Details',
+                    'desc'    => '',
+                    'id'      => 'cws_confluence_tier_one_details',
+                    'type'    => 'wysiwyg',
+                    // Optionally hide the text input for the url:
+                    'options' => array(
+                        'url' => false,
+                    ),
+                ),
+                array(
+                    'name'    => 'Tier One Pricing',
+                    'desc'    => 'Price, Price per year, Price per month...',
+                    'id'      => 'cws_confluence_tier_one_pricing',
+                    'type'    => 'trxt',
+                    'options' => array(
+                        'url' => false,
+                ),
+                    array(
+                        'name' => __('Tier One CTA', 'theme_textdomain'),
+                        'desc' => __('Learn More or Buy Now page', 'theme_textdomain'),
+                        'id' => 'cws_confluence_tier_one_url',
+                        'default' => '',
+                        'type' => 'text_url'
+                    ),
+                ),
+            )
+        );
+
+        $this->option_metabox[] = array(
             'id'         => 'social_options',
             'title'      => 'Social Media Settings',
             'show_on'    => array( 'key' => 'options-page', 'value' => array( 'social_options' ), ),

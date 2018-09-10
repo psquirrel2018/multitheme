@@ -36,6 +36,8 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
 
     //Control for the layout of the top navbar
     $cws_navbar_inner = cws_confluence_get_option2( 'cws_confluence_sm_layout' );
+    //Control for the pricing option
+    $cws_pricing_option = cws_confluence_get_option2( 'cws_confluence_pricing_layout' );
 
     //Social Media Icons
     $fb_url = cws_confluence_get_option2( 'cws_confluence_fb_url' );
