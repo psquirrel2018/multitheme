@@ -16,12 +16,6 @@ add_action( 'tgmpa_register', 'cws_bike_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
- *
- * In this example, we register five plugins:
- * - one included with the TGMPA library
- * - two from an external source, one from an arbitrary source, one from a GitHub repository
- * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
- *
  * The variables passed to the `tgmpa()` function should be:
  * - an array of plugin arrays;
  * - optionally a configuration array.
@@ -37,56 +31,12 @@ function cws_bike_register_required_plugins() {
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array(
-
-        // This is an example of how to include a plugin bundled with a theme.
-       /* array(
-            'name'               => 'TGM Example Plugin', // The plugin name.
-            'slug'               => 'tgm-example-plugin', // The plugin slug (typically the folder name).
-            'source'             => get_stylesheet_directory() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source.
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-            'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-            'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-            'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-        ),*/
-
-        // This is an example of how to include a plugin from an arbitrary external source in your theme.
-        /*array(
-            'name'         => 'TGM New Media Plugin', // The plugin name.
-            'slug'         => 'tgm-new-media-plugin', // The plugin slug (typically the folder name).
-            'source'       => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
-            'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-            'external_url' => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
-        ),*/
-
-        // This is an example of how to include a plugin from a GitHub repository in your theme.
-        // This presumes that the plugin code is based in the root of the GitHub repository
-        // and not in a subdirectory ('/src') of the repository.
-        /*array(
-            'name'      => 'Adminbar Link Comments to Pending',
-            'slug'      => 'adminbar-link-comments-to-pending',
-            'source'    => 'https://github.com/jrfnl/WP-adminbar-comments-to-pending/archive/master.zip',
-        ),*/
-
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
             'name'      => 'CMB2',
             'slug'      => 'cmb2',
             'required'  => true,
         ),
-        array(
-            'name'      => 'Mega Menu',
-            'slug'      => 'megamenu',
-            'required'  => true,
-        ),
-
-        // This is an example of the use of 'is_callable' functionality. A user could - for instance -
-        // have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.
-        // 'wordpress-seo-premium'.
-        // By setting 'is_callable' to either a function from that plugin or a class method
-        // `array( 'class', 'method' )` similar to how you hook in to actions and filters, TGMPA can still
-        // recognize the plugin as being installed.
         array(
             'name'        => 'WordPress SEO by Yoast',
             'slug'        => 'wordpress-seo',
@@ -123,9 +73,7 @@ function cws_bike_register_required_plugins() {
 
 /**
  * Remove Page Templates
- *
  * @author Scott Taylor
- *
  * @param array $page_templates
  * @return array
  */
@@ -140,7 +88,6 @@ add_filter( 'theme_page_templates', 'confluence_remove_page_templates' );
 // REMOVE WP EMOJI
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
-
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
@@ -150,8 +97,7 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 add_action( 'wp_enqueue_scripts', 'cws_bike_scripts');
 function cws_bike_scripts(){
-    // wp_deregister_script('jquery');                                     // De-Register jQuery
-    //wp_register_script('jquery', get_template_directory_uri() .'/js/jquery.js', array(), '1.0.0', true);    // Register as 'empty', because we manually insert our script in header.php
+    //wp_register_script('jquery', get_template_directory_uri() .'/js/jquery.js', array(), '1.0.0', true);
     //wp_enqueue_script( 'jquery' );
     wp_enqueue_script('owl', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script('core', get_template_directory_uri() . '/js/core.min.js', array(), '1.0.0', true );
@@ -164,28 +110,18 @@ function cws_bike_scripts(){
 
 function cws_bike_styles() {
     wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '1', 'all' );
-    //wp_register_style('bootstrap.margin.padding.css', get_template_directory_uri() . '/css/bootstrap-margin-padding.css', array(), '1', 'all' );
     //wp_register_style('animate',  get_template_directory_uri() .'/css/animate.css', array(), null, 'all' );
-    //wp_register_style('font-awesome.min', get_template_directory_uri() .'/css/font-awesome.min.css', array(), null, 'all' );
-    //wp_register_style('font-awesome-animation.min', get_template_directory_uri() .'/css/font-awesome-animation.min.css', array(), null, 'all' );
-    wp_register_style('flaticon', get_template_directory_uri() .'/css/flaticon.css', array(), null, 'all' );
     wp_register_style('superslides', get_template_directory_uri() .'/css/superslides.css', array(), null, 'all' );
     wp_register_style('icons', get_template_directory_uri() .'/css/icons.css', array(), null, 'all' );
     wp_register_style('owl-carousel', get_template_directory_uri() .'/css/owl.carousel.css', array(), null, 'all' );
-    //wp_register_style('responsive', get_template_directory_uri() .'/css/responsive.css', array(), null, 'all' );
     //wp_register_style('styles', get_stylesheet_uri(), array(), null, 'all' );
     wp_register_style('styles', get_stylesheet_uri(), array(), null, 'all' );
     wp_register_style('cwsCustom', get_template_directory_uri(). '/cwsDynamicStyles.php', array(), null, 'all' );
     wp_enqueue_style( 'bootstrap' );
-    //wp_enqueue_style( 'bootstrap.margin.padding.css' );
     wp_enqueue_style( 'owl-carousel' );
-    // wp_enqueue_style( 'flaticon' );
     // wp_enqueue_style( 'animate' );
     wp_enqueue_style( 'superslides' );
     wp_enqueue_style( 'icons' );
-    // wp_enqueue_style( 'responsive' );
-    //wp_enqueue_style( 'font-awesome.min' );
-    //wp_enqueue_style( 'font-awesome-animate.min' );
     wp_enqueue_style( 'styles' );
     wp_enqueue_style( 'cwsCustom');
 }
@@ -206,8 +142,6 @@ function cws_confluence_get_option2( $key = '' ) {
     global $my_Admin;
     return cmb2_get_option( $my_Admin->get_option_key($key), $key );
 }
-
-
 
 /**
  * function to setup default theme menu
@@ -250,13 +184,13 @@ function cws_bike_nav_fallback() {
         <a href="/location/"><?php _e('Location', 'cws_bike'); ?></a>
     </li>
     <li class="page-scroll">
-        <a href="#"><?php _e('Services', 'cws_bike'); ?></a>
+        <a href="/services/"><?php _e('Services', 'cws_bike'); ?></a>
     </li>
     <li class="page-scroll">
-        <a href="#"><?php _e('News', 'cws_bike'); ?></a>
+        <a href="/news/"><?php _e('News', 'cws_bike'); ?></a>
     </li>
     <li class="page-scroll">
-        <a href="#"><?php _e('Contact Us', 'cws_bike'); ?></a>
+        <a href="/contact-us/"><?php _e('Contact Us', 'cws_bike'); ?></a>
     </li>
     </ul>
     <?php
@@ -265,7 +199,7 @@ function cws_bike_nav_fallback() {
 // add title tag support
 //add_theme_support( 'title-tag' );
 
-/* Changed excerpt length to 150 words*/
+/* Changed excerpt length to 100 words*/
 function cws_bike_excerpt_length($length) {
     return 100;
 }
