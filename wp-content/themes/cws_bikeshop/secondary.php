@@ -3,7 +3,7 @@
 Template Name: Secondary Pages
 */
 
-get_header( 'two' );
+get_header();
 
 global $post;
 
