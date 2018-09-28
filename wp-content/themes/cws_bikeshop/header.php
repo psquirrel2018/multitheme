@@ -4,7 +4,6 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package sparkling
  */
 
 if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) !== false ) ) {
@@ -24,7 +23,7 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="<?php //echo of_get_option( 'nav_bg_color' ); ?>">
+    <meta name="theme-color" content="<?php //echo of_get_option2( 'nav_bg_color' ); ?>">
     <link rel="profile" href="http://gmpg.org/xfn/11">
 
     <?php wp_head();
@@ -36,6 +35,8 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
 
     //Control for the layout of the top navbar
     $cws_navbar_inner = cws_confluence_get_option2( 'cws_confluence_sm_layout' );
+    //Control for the pricing option
+    $cws_pricing_option = cws_confluence_get_option2( 'cws_confluence_pricing_layout' );
 
     //Social Media Icons
     $fb_url = cws_confluence_get_option2( 'cws_confluence_fb_url' );
@@ -69,14 +70,15 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
     $slide_three_sm_text = cws_confluence_get_option2( 'cws_confluence_slider_three_smText');
     $slide_three_cta = cws_confluence_get_option2( 'cws_confluence_slider_three_cta');
     $slide_three_ctaUrl = cws_confluence_get_option2( 'cws_confluence_slider_three_cta_url');
-
+    // Featured Image
+    //$featuredImg = get_the_post_thumbnail_url($post->ID);
     ?>
 
 </head>
 
 <body <?php body_class(); ?>>
-<header id="masthead" class="site-header" role="banner">
-    <nav class="container navbar navbar-default" role="navigation">
+<header id="masthead" class="site-header" role="banner" style="height:130px;">
+    <div class="container-fluid nav-top">
         <div class="row">
             <?php
             if ($cws_navbar_inner === 'no-social') { get_template_part('template-parts/cws-navbar-inner'); }
@@ -86,21 +88,13 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
                         <div class="col-sm-4 left-side hidden-xs">
                             <ul class="list-inline list-inline-sm list-inline-white text-darker">
                                 <?php if ($fb_url != '') {?>
-                                    <li><a href="#" class="text-dark fa fa-facebook"></a></li>
+                                    <li><a href="<?= $fb_url; ?>" class="fa fa-facebook top-bar-font3"></a></li>
                                 <?php }; ?>
                                 <?php if ($twitter_url != '') {?>
-                                    <li><a href="#" class="text-dark fa fa-twitter"></a></li>
+                                    <li><a href="<?= $twitter_url; ?>" class="fa fa-twitter top-bar-font3"></a></li>
                                 <?php }; ?>
-                                <?php if ($gplus_url != '') {?>
-                                    <li><a href="#" class="text-dark fa fa-google-plus"></a></li>
-                                <?php }; ?>
-                                <?php if ($youtube_url != '') {?>
-                                    <li><a href="#" class="text-dark fa fa-youtube"></a></li>
-                                <?php }; ?>
-                                <?php if ($in_url != '') {?>
-                                    <li><a href="#" class="text-dark fa fa-linkedin"></a></li>
-                                <?php }; ?>
-                                <?php if (empty($in_url) && empty($fb_url) && empty($youtube_url) && empty($gplus_url) && empty($twitter_url) ) {?>
+
+                                <?php if (empty($fb_url) && empty($twitter_url) ) {?>
                                     <li>Add Social Media Urls to the Site Options</li>
                                 <?php }; ?>
                             </ul>
@@ -108,26 +102,23 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
                         <div class="col-sm-4">
                             <?php if ($business_email != '') {?>
                                 <div class="email">
-                                    <address class="contact-info"><span class="icon mdi mdi-email"></span><a href="" class="text-middle"><?= $business_email; ?></a></address>
+                                    <address class="contact-info"><a href="emailto:<?= $business_email; ?>" class="fa fa-envelope-o text-middle top-bar-font3"> <span class="top-bar-font"><?= $business_email; ?></span></a></address>
                                 </div>
                             <?php } else { ?>
                             Go to site options and add an email address
                             <?php }; ?></span></address>
                         </div>
-                        <div class="col-sm-4">
-                            <?php if ($phone != '') {?>
-                                <div class="phone">
-                                    <address class="contact-info"><span class="icon mdi mdi-cellphone-android"></span><a href="callto:<?= $phone; ?>" class="text-middle"><?= $phone; ?></a></address>
-                                </div>
-                            <?php } else { ?>
-                            Go to site options and add a #
-                            <?php }; ?></span></address>
+                        <div class="col-sm-4 signup-btn">
+                            <a href="/newsletter-sign-up/" class="text-dark fa fa-newspaper-o news-signup"> <span class="top-bar-font2">Newsletter Sign Up</span></a>
                         </div>
                     </div>
                 </div>
             <?php } ?>
         </div>
-        <hr>
+
+    </div>
+    <nav class="container-fluid navbar navbar-default navbar-fixed-top head-room" role="navigation">
+
         <div class="row">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -152,61 +143,26 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
                 <?php echo cws_bike_nav(); ?>
             </div>
         </div>
+        <div class="row search-bar">
+            <div class="col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
+                <?php //get_search_form(); ?>
+            </div><!--  .col-md-8 -->
+        </div><!--  .row -->
     </nav>
 
-
-    <div id="slider" style="max-height:600px !important;">
-        <?php if($slide_one_img !='') { ?>
-            <ul class="slides-container">
-                <!-- Slide container -->
-                <li>
-                    <img src="<?= $slide_one_img; ?>">
-                    <div class="tint">
-                        <div class="content text-center">
-                            <h1>    <?= $slide_one_title; ?> </h1>
-                            <h5><?= $slide_one_secondaryTitle; ?></h5>
-                            <div class="small">--- <?= $slide_one_sm_text; ?></div>
-                            <p><a href="<?= $slide_one_ctaUrl; ?>"
-                                  class="btn btn-primary"><?= $slide_one_cta; ?></a></p>
-                        </div>
-                    </div>
-                </li>
-                <?php if($slide_two_img !='') { ?>
-                    <li>
-                        <img src="<?= $slide_two_img; ?>">
-                        <div class="tint">
-                            <div class="content text-center">
-                                <h1>    <?= $slide_two_title; ?> </h1>
-                                <h5><?= $slide_two_secondaryTitle; ?></h5>
-                                <div class="small">--- <?= $slide_two_sm_text; ?></div>
-                                <p><a href="<?= $slide_two_ctaUrl; ?>"
-                                      class="btn btn-primary"><?= $slide_two_cta; ?></a></p>
-                            </div>
-                        </div>
-                    </li>
-                <?php } ?>
-                <?php if($slide_three_img !='') { ?>
-                    <li>
-                        <img src="<?= $slide_three_img; ?>">
-                        <div class="tint">
-                            <div class="content text-center">
-                                <h1>    <?= $slide_three_title; ?> </h1>
-                                <h5><?= $slide_three_secondaryTitle; ?></h5>
-                                <div class="small">--- <?= $slide_three_sm_text; ?></div>
-                                <p><a href="<?= $slide_three_ctaUrl; ?>"
-                                      class="btn btn-primary"><?= $slide_three_cta; ?></a></p>
-                            </div>
-                        </div>
-                    </li>
-                <?php } ?>
-
-            </ul>
-        <?php } else { ?>
-            <li><h4 style="padding: 60px;">You must enter at least one slide in the Theme Options panel of the admin and it has to be the first slide</h4></li>
-        <?php } ?>
-        <nav class="slides-navigation" style="z-index:10000;margin:-100px 0 0 10px;position:relative;">
-            <a href="#" class="prev"><i class="fa fa-angle-left fa-2x"></i></a>
-            <a href="#" class="next"><i class="fa fa-angle-right fa-2x"></i></a>
-        </nav>
-    </div>
 </header><!-- #masthead -->
+
+<?php
+
+//if($headerType === 'slider') { get_template_part('template-parts/slider'); }
+
+if ( is_front_page() ) {
+
+    // If homepage is set in site Settings to a static page
+
+    get_template_part('template-parts/flickity');
+
+} else { // Everything else ?>
+
+
+<?php } ?>
