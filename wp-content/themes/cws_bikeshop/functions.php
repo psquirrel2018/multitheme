@@ -102,7 +102,8 @@ function cws_bike_scripts(){
     wp_enqueue_script('owl', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script('core', get_template_directory_uri() . '/js/core.min.js', array(), '1.0.0', true );
     wp_enqueue_script('shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '1.0.0', true );
-    wp_enqueue_script('superslides', get_template_directory_uri() . '/js/jquery.superslides.min.js', array(), '1.0.0', true );
+    wp_enqueue_script('flickity', get_template_directory_uri() . '/js/flickity.pkgd.min.js', array(), '1.0.0', true );
+    //wp_enqueue_script('superslides', get_template_directory_uri() . '/js/jquery.superslides.min.js', array(), '1.0.0', true );
     //wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCSe_J0iYuFqJiHPBOY63Ti_BNmM1LzLik&sensor=false');
     wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array(), '1.0.0', true );
 }
@@ -111,7 +112,8 @@ function cws_bike_scripts(){
 function cws_bike_styles() {
     wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '1', 'all' );
     //wp_register_style('animate',  get_template_directory_uri() .'/css/animate.css', array(), null, 'all' );
-    wp_register_style('superslides', get_template_directory_uri() .'/css/superslides.css', array(), null, 'all' );
+    //wp_register_style('superslides', get_template_directory_uri() .'/css/superslides.css', array(), null, 'all' );
+    wp_register_style('flickity', get_template_directory_uri() .'/css/flickity.css', array(), null, 'all' );
     wp_register_style('icons', get_template_directory_uri() .'/css/icons.css', array(), null, 'all' );
     wp_register_style('owl-carousel', get_template_directory_uri() .'/css/owl.carousel.css', array(), null, 'all' );
     //wp_register_style('styles', get_stylesheet_uri(), array(), null, 'all' );
@@ -120,7 +122,7 @@ function cws_bike_styles() {
     wp_enqueue_style( 'bootstrap' );
     wp_enqueue_style( 'owl-carousel' );
     // wp_enqueue_style( 'animate' );
-    wp_enqueue_style( 'superslides' );
+    wp_enqueue_style( 'flickity' );
     wp_enqueue_style( 'icons' );
     wp_enqueue_style( 'styles' );
     wp_enqueue_style( 'cwsCustom');
