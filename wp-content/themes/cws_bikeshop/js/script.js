@@ -30,7 +30,27 @@ var userAgent = navigator.userAgent.toLowerCase(),
  */
 $document.ready(function () {
 
-  /**
+    $('.main-carousel').flickity({
+        // options
+        autoPlay: true,
+        //fullscreen: true,
+        lazyLoad: 1,
+        cellAlign: 'left',
+        wrapAround: true,
+        contain: true
+    });
+
+    //hide top bar when scrolling
+    $(window).scroll(function(){
+        if ( $(this).scrollTop() > 10 ){
+            $('.navbar-fixed-top').removeClass('head-room');
+        } else {
+            $('.navbar-fixed-top').addClass('head-room');
+        }
+    });
+
+
+    /**
    * isScrolledIntoView
    * @description  check the element whas been scrolled into the view
    */
